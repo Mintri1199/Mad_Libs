@@ -17,12 +17,13 @@ def change_input(inputted):
         print(index, string)
 
     flag = input("Do you want to change your answer?  Y/N")
+
     while flag.upper() == "Y":
         try:
             changing = input('Input the number associated to the desired item: ')
 
-            inputted[int(changing)] = input("Please input a " +
-                                            prompt_for_user[int(changing)])
+            inputted[int(changing)] = input("Please input a " + prompt_for_user[int(changing)])
+
             print(*inputted)
 
         except TypeError:
