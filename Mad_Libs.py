@@ -1,18 +1,16 @@
-print("Welcome to Mad Libs")
+#
 
-user_inputs = []
 
-# Mad_Libs = {'Mad Lib 1 title': "sososo"}
-
-# The part of speech list are empty
-
+#
 
 testList = ['This is {} and this is {}']
 
 prompt_for_user = ['noun ', 'verb ']
+
 nounList = []
 
 
+# Allow the use to change their inputs
 def change_input(inputted):
 
     for index, string in enumerate(inputted):
@@ -30,6 +28,8 @@ def change_input(inputted):
         except TypeError:
             exit()
 
+    print(noun_insert(inputted))
+
 
 # Determine the amount of inputs require for the selected Mad Lib
 def required_inputs():
@@ -41,22 +41,12 @@ def required_inputs():
     change_input(input_taken)
 
 
-def noun_input():
-    i = 0
-    while i < testList[0].count('{}'):
-
-        noun = input('Please input a noun: ')
-        nounList.append(noun)
-        i += 1
-
-
+# Insert the user inputs into the Mad Lib
 def noun_insert(value):
+    return testList[0].format(*value)
 
-    print(testList[0].format(*value))
 
-
-def test():
-    # The user will be able to input
+def run():
     pass
 
 
