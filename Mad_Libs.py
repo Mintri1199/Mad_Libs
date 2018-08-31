@@ -1,9 +1,7 @@
-#
+import os
 
 
-#
-
-testList = ['This is {} and this is {}']
+testList = {'Test title':'This is {} and this is {}'}
 
 prompt_for_user = ['noun ', 'verb ']
 
@@ -43,12 +41,42 @@ def required_inputs():
 
 
 # Insert the user inputs into the Mad Lib
-def noun_insert(value):
-    return testList[0].format(*value)
+def noun_insert(taken_list, selected_story):
+    try:
+        return testList[selected_story].format(*taken_list)
+
+    except TypeError:
+        print("What you've entered wasn't a number: ")
+
+    except IndexError:
+        print("You try to choose a story that doesn't exist in our library.")
 
 
+# Run the program
 def run():
-    pass
+    print("Welcome to Mad Libs")
+    initial = True
+
+    while initial:
+
+        flag = input("Do you want do some Mad Libs?     Y/N\n")
+
+        if flag.upper() == "Y":
+            pass
+        elif flag.upper() == "N":
+                initial = False
+
+        else:
+            print("What you've entered was neither Y or N!\n")
+
+        while flag.upper() == "Y":
+            # os.system("clear")
+            for indexes, title in enumerate(testList.keys()):
+                print(indexes, title)
+
+            flag = "N"
+
+    print("Thank you for stopping by!")
 
 
-required_inputs()
+run()
