@@ -1,26 +1,37 @@
-# import os
+import os
 
-from termcolor import cprint
+from termcolor import cprint , colored
 
 
-class Madlibs():
+class Madlibs:
 
     def __init__(self):
+
+        vacation = ["adjective", "adjective", "noun", "noun", "plural noun", "game", "plural noun",
+                    'verb ending in "ing"', 'verb ending in "ing"', "plural noun", 'verb ending in "ing"',
+                    "noun", 'noun', "part of the body", 'a place', 'verb ending in "ing"', 'adjective',
+                    'number', 'plural noun']
+
+        park = ['adjective', 'plural noun', 'noun', 'adverb', 'number', 'past tense verb', '-est adjective',
+                'past tense verb', 'adverb', 'adjective']
+
+        jungle = ['adjective','adjective', 'adjective', 'noun', 'adjective', 'adjective','noun','verb','verb',
+                  'adjective', 'noun', 'verb','noun', 'verb', 'adjective']
+
+        zoo = ['adjective', 'noun', 'verb, past tense', 'adverb', 'adjective', 'noun', 'noun', 'adjective', 'verb',
+               'adverb', 'verb, past tense', 'adjective']
+
         self.story = []
         self.selection = []
         self.input_taken = []
         self.chosen_title = ''
         self.story_select = ""
-        self.title_library = ['vacation']
-        self.story_library = {'vacation.txt': ""}
-        self.user_prompts = ["adjective", "adjective", "noun", "noun", "plural noun", "game", "plural noun",
-                             'verb ending in "ing"', 'verb ending in "ing"', "plural noun", 'verb ending in "ing"',
-                             "noun", 'noun', "part of the body", 'a place', 'verb ending in "ing"', 'adjective',
-                             'number']
+        self.title_library = ['vacation', 'park', 'jungle', 'zoo']
+        self.story_library = {'vacation.txt': vacation, 'park.txt' : park, 'jungle.txt': jungle , 'zoo.txt': zoo}
 
     # Allow the user to select the story
     def selecting_story(self):
-        for indexes, title in enumerate(self.story_library):
+        for indexes, title in enumerate(self.title_library):
             print(indexes, title)
 
         self.story_select = input("Enter the number associated with the title you want:\n")
@@ -31,50 +42,59 @@ class Madlibs():
                 return int(self.story_select)
 
             except ValueError:
-                cprint("What you've entered wasn't a number!", 'red', attrs=['bold'])
+                cprint("What you've entered wasn't a number!\n", 'red', attrs=['bold'])
                 self.story_select = input("Please input a NUMBER correspond with the story you want\n")
 
     # Determine the amount of inputs require for the selected Mad Lib
     def required_inputs(self):
-        self.chosen_title = self.title_library[int(self.story_select)] + '.txt'
+        try:
+            self.chosen_title = self.title_library[int(self.story_select)] + '.txt'
 
-        with open(self.chosen_title) as file:
-            read_file = file.read()
-            try:
-                if len(self.user_prompts) == read_file.count('{}'):
-                    for i in self.user_prompts:
-                        self.input_taken.append(input(i))
+            with open(self.chosen_title) as file:
+                read_file = file.read()
 
-            except KeyError:
-                # os.system("clear")
-                print()
-                self.selecting_story()
+                if len(self.story_library[self.chosen_title]) == read_file.count('{}'):
+                    for i in self.story_library[self.chosen_title]:
+                        self.input_taken.append(input(i + ": "))
+
+                    os.system("clear")
+
+        except IndexError:
+            os.system("clear")
+            cprint("The story you select did not exist!", 'red', attrs=['bold'])
+            self.selecting_story()
 
     # Allow the use to change their inputs
     def change_input(self):
+        done = colored("done", 'green', attrs=['bold'])
         for index, string in enumerate(self.input_taken):
             print(index, string)
 
-        flag = input("Do you want to change your answer?  Y/N")
+        flag = input("Do you want to change your answer?  Y/N ")
 
         while flag.upper() == "Y":
             try:
-                changing = input('Input the number associated to the desired item: ')
+                changing = input('Input the number associated to the desired item or input ' + done + ' to finish: ')
+                if changing.upper() == "DONE":
+                     flag = changing
 
-                self.input_taken[int(changing)] = input("Please input a " + self.user_prompts[int(changing)])
+                else:
+                    self.input_taken[int(changing)] = input("Please input a " +
+                                                            self.story_library[self.chosen_title][int(changing)] + ": ")
 
-                print(*self.input_taken)
-
-            except ValueError:
-                exit()
+            except IndexError:
+                cprint("What you try to change is not with the list of inputs!", 'red', attrs=['bold'])
 
     # Insert the user inputs into the Mad Lib
-    def noun_insert(self):
+    def input_insert(self):
+
         try:
             with open(self.chosen_title) as file:
                 read = file.read()
 
-                return read.format(*self.input_taken)
+                os.system("clear")
+
+                print(read.format(*self.input_taken))
 
         except TypeError:
             print("What you've entered wasn't a number: ")
@@ -84,11 +104,33 @@ class Madlibs():
 
     # Run the program
     def run(self):
-        self.selecting_story()
-        self.required_inputs()
-        self.change_input()
-        self.noun_insert()
+        cprint('Welcome to Mad Libs', 'green', attrs=['bold'])
+        initial = True
 
+        while initial:
+
+            starting_question = input("Do you want do some Mad Libs?     Y/N\n")
+
+            if starting_question.upper() == "Y":
+                pass
+
+            elif starting_question.upper() == "N":
+                initial = False
+
+            else:
+                print("What you've entered was neither Y or N!\n")
+
+            while starting_question.upper() == "Y":
+                # os.system("clear")
+
+                self.selecting_story()
+                self.required_inputs()
+                self.change_input()
+                self.input_insert()
+
+                starting_question = "N"
+
+        cprint('Thank for stopping by!', 'magenta')
 
 
 test = Madlibs()
