@@ -1,6 +1,6 @@
 import os
 
-from termcolor import cprint , colored
+from termcolor import cprint, colored
 
 
 class Madlibs:
@@ -15,8 +15,8 @@ class Madlibs:
         park = ['adjective', 'plural noun', 'noun', 'adverb', 'number', 'past tense verb', '-est adjective',
                 'past tense verb', 'adverb', 'adjective']
 
-        jungle = ['adjective','adjective', 'adjective', 'noun', 'adjective', 'adjective','noun','verb','verb',
-                  'adjective', 'noun', 'verb','noun', 'verb', 'adjective']
+        jungle = ['adjective', 'adjective', 'adjective', 'noun', 'adjective', 'adjective', 'noun', 'verb', 'verb',
+                  'adjective', 'noun', 'verb', 'noun', 'verb', 'adjective']
 
         zoo = ['adjective', 'noun', 'verb, past tense', 'adverb', 'adjective', 'noun', 'noun', 'adjective', 'verb',
                'adverb', 'verb, past tense', 'adjective']
@@ -27,7 +27,7 @@ class Madlibs:
         self.chosen_title = ''
         self.story_select = ""
         self.title_library = ['vacation', 'park', 'jungle', 'zoo']
-        self.story_library = {'vacation.txt': vacation, 'park.txt' : park, 'jungle.txt': jungle , 'zoo.txt': zoo}
+        self.story_library = {'vacation.txt': vacation, 'park.txt': park, 'jungle.txt': jungle, 'zoo.txt': zoo}
 
     # Allow the user to select the story
     def selecting_story(self):
@@ -76,7 +76,7 @@ class Madlibs:
             try:
                 changing = input('Input the number associated to the desired item or input ' + done + ' to finish: ')
                 if changing.upper() == "DONE":
-                     flag = changing
+                    flag = changing
 
                 else:
                     self.input_taken[int(changing)] = input("Please input a " +
@@ -109,7 +109,7 @@ class Madlibs:
 
         while initial:
 
-            starting_question = input("Do you want do some Mad Libs?     Y/N\n")
+            starting_question = input("Do you want do some Mad Libs?     Y/N")
 
             if starting_question.upper() == "Y":
                 pass
