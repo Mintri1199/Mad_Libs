@@ -22,6 +22,8 @@ Then input
 
 Then follow the instructions shown on screen to enjoy some Mad libs
 
+---
+
 ### Can I import other stories or make my own?
 
 Yes you can but I highly advise not to do it for this program because it is very tedious.
@@ -43,7 +45,7 @@ But if you still want to do it then follow the steps below
 
 5. Add the title of your mad lib into the list of titles 
 
-**Please make sure that the title and the file name are the same**
+**Please make sure that the title and the file name are the same.*
 
 ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_title.png)
 
