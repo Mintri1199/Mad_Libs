@@ -31,23 +31,17 @@ Yes you can but I highly advise not to do it for this program because it is very
 But if you still want to do it then follow the steps below
 
 1. Grab any mad lib from anywhere or make your own in a text file
-
 2. Move the mad lib text file inside the project directory
-
 3. Edit the text file so that the required parts of speech are replace with {}
-![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/editing_mad_lib.png)
+  - ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/editing_mad_lib.png)
 
 4. In **Better_Mad_Libs.py** create a list with all the parts of speech 
-
-![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_part_of_speech.png)
-
-**Make sure the numbers of curly braces equal to the numbers of items in the list**
+  - ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_part_of_speech.png)
+  - **Make sure the numbers of curly braces equal to the numbers of items in the list**
 
 5. Add the title of your mad lib into the list of titles 
-
-![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_title.png)
-
-**Please make sure that the title and the file name are the same.**
+  - ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_title.png)
+  - **Please make sure that the title and the file name are the same.**
 
 6. Add the file name in the dictionary and make the list of parts of speech as it value as shown below
 ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_story.png)
