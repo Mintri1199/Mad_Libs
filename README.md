@@ -32,7 +32,28 @@ But if you still want to do it then follow the steps below
 
 2. Move the mad lib text file inside the project directory
 
-3. Edit the text file so that the required part of speeches are replace with {}
+3. Edit the text file so that the required parts of speech are replace with {}
+![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/editing_mad_lib.png)
+
+4. In **Better_Mad_Libs.py** create a list with all the parts of speech 
+
+**Make sure the numbers of curly braces equal to the numbers of items in the list**
+
+![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_part_of_speech.png)
+
+5. Add the title of your mad lib into the list of titles 
+
+**Please make sure that the title and the file name are the same**
+
+![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_title.png)
+
+6. Add the file name in the dictionary and make the list of parts of speech as it value as shown below
+
+![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_story.png)
+
+7. Finally run it 
+
+
 
 
 
