@@ -38,11 +38,13 @@ But if you still want to do it then follow the steps below
 ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/editing_mad_lib.png)
 
 4. In **Better_Mad_Libs.py** create a list with all the parts of speech 
+
 ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_part_of_speech.png)
 
 **Make sure the numbers of curly braces equal to the numbers of items in the list**
 
 5. Add the title of your mad lib into the list of titles 
+
 ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_title.png)
 
 **Please make sure that the title and the file name are the same.**
