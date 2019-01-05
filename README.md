@@ -14,9 +14,9 @@ In your terminal
 
 `git clone https://github.com/Mintri1199/Mad_Libs`
 
-Open the project directory 
+Open the project directory in your terminal 
 
-In your terminal 
+Then input
 
 `python3 Better_Mad_Libs.py`
 
