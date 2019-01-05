@@ -8,7 +8,7 @@ The complexity of this assignment is up to the students' experience.
 
 ### How to run this program
 
-* Make sure you have installed python3 and termcolor (A module that change the color of the text in terminal)
+**Make sure** you have installed python3 and termcolor (A module that change the color of the text in terminal)
 
 In your terminal
 
