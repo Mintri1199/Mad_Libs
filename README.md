@@ -43,12 +43,7 @@ But if you still want to do it then follow the steps below
   - ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_title.png)
   - **Please make sure that the title and the file name are the same.**
 
-6. Add the file name in the dictionary and make the list of parts of speech as it value as shown below
+6. Add the file name in the dictionary and make the list form step 4 as it value as shown below
 ![alt text](https://github.com/Mintri1199/Mad_Libs/blob/master/images/adding_story.png)
 
 7. Finally run it 
-
-
-
-
-
